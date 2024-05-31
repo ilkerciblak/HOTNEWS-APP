@@ -13,6 +13,7 @@
 		7F308BC82C0A7871007BA2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F308BC72C0A7871007BA2AA /* Assets.xcassets */; };
 		7F308BCB2C0A7871007BA2AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7F308BCA2C0A7871007BA2AA /* Base */; };
 		7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */; };
+		7F308BE12C0A7F36007BA2AA /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BE02C0A7F36007BA2AA /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7F308BCA2C0A7871007BA2AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F308BCC2C0A7871007BA2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7F308BE02C0A7F36007BA2AA /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		7F308BD52C0A7A3E007BA2AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F308BDF2C0A7F2B007BA2AA /* News */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +156,14 @@
 				7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		7F308BDF2C0A7F2B007BA2AA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				7F308BE02C0A7F36007BA2AA /* NewsModel.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F308BC32C0A786F007BA2AA /* MainTabbarViewController.swift in Sources */,
+				7F308BE12C0A7F36007BA2AA /* NewsModel.swift in Sources */,
 				7F308BBF2C0A786F007BA2AA /* AppDelegate.swift in Sources */,
 				7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */,
 				7F308BC12C0A786F007BA2AA /* SceneDelegate.swift in Sources */,
