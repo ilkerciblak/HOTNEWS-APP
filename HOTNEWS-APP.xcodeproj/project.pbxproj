@@ -21,6 +21,8 @@
 		7F308BF02C0A833D007BA2AA /* NewsCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BEF2C0A833D007BA2AA /* NewsCardCollectionViewCell.swift */; };
 		7F308BF22C0A84AD007BA2AA /* ColorK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BF12C0A84AD007BA2AA /* ColorK.swift */; };
 		7F308BF42C0A8685007BA2AA /* NewsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BF32C0A8685007BA2AA /* NewsCardViewModel.swift */; };
+		7F308BF72C0A8946007BA2AA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7F308BF62C0A8946007BA2AA /* SDWebImage */; };
+		7F308BF92C0A8946007BA2AA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7F308BF82C0A8946007BA2AA /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F308BF92C0A8946007BA2AA /* SDWebImageMapKit in Frameworks */,
+				7F308BF72C0A8946007BA2AA /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +233,10 @@
 			dependencies = (
 			);
 			name = "HOTNEWS-APP";
+			packageProductDependencies = (
+				7F308BF62C0A8946007BA2AA /* SDWebImage */,
+				7F308BF82C0A8946007BA2AA /* SDWebImageMapKit */,
+			);
 			productName = "HOTNEWS-APP";
 			productReference = 7F308BBB2C0A786F007BA2AA /* HOTNEWS-APP.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 7F308BB22C0A786F007BA2AA;
+			packageReferences = (
+				7F308BF52C0A8946007BA2AA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 7F308BBC2C0A786F007BA2AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -505,6 +516,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F308BF52C0A8946007BA2AA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F308BF62C0A8946007BA2AA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F308BF52C0A8946007BA2AA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		7F308BF82C0A8946007BA2AA /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F308BF52C0A8946007BA2AA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F308BB32C0A786F007BA2AA /* Project object */;
 }

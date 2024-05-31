@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsCardCollectionViewCell: UICollectionViewCell {
     
@@ -60,9 +61,8 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
         self.titleLabel.text = vm.newsTitle
         self.sourceLabel.text = vm.sourceName
         self.url = vm.sourceUrl
+        self.imgView.sd_setImage(with: URL(string: vm.imgUrl))
         
-        // webView
-        // Image
     }
     
     
