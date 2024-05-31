@@ -14,6 +14,10 @@
 		7F308BCB2C0A7871007BA2AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7F308BCA2C0A7871007BA2AA /* Base */; };
 		7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */; };
 		7F308BE12C0A7F36007BA2AA /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BE02C0A7F36007BA2AA /* NewsModel.swift */; };
+		7F308BE52C0A81CE007BA2AA /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BE42C0A81CE007BA2AA /* NewsAPI.swift */; };
+		7F308BE82C0A8207007BA2AA /* NewsAPIK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BE72C0A8207007BA2AA /* NewsAPIK.swift */; };
+		7F308BEB2C0A825C007BA2AA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BEA2C0A825C007BA2AA /* StringExtension.swift */; };
+		7F308BED2C0A827A007BA2AA /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BEC2C0A827A007BA2AA /* DictionaryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7F308BE02C0A7F36007BA2AA /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		7F308BE22C0A7FF1007BA2AA /* APICONFIG.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APICONFIG.xcconfig; sourceTree = "<group>"; };
+		7F308BE42C0A81CE007BA2AA /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		7F308BE72C0A8207007BA2AA /* NewsAPIK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIK.swift; sourceTree = "<group>"; };
+		7F308BEA2C0A825C007BA2AA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		7F308BEC2C0A827A007BA2AA /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 		7F308BD82C0A7A4E007BA2AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7F308BE62C0A81F8007BA2AA /* Constant */,
 				7F308BD92C0A7A99007BA2AA /* Extension */,
 			);
 			path = Helpers;
@@ -131,6 +140,8 @@
 		7F308BD92C0A7A99007BA2AA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7F308BEA2C0A825C007BA2AA /* StringExtension.swift */,
+				7F308BEC2C0A827A007BA2AA /* DictionaryExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 		7F308BDA2C0A7ABC007BA2AA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7F308BE32C0A81BC007BA2AA /* NewsAPI */,
 				7F308BDC2C0A7CE4007BA2AA /* NetworkService */,
 			);
 			path = Service;
@@ -166,6 +178,22 @@
 				7F308BE02C0A7F36007BA2AA /* NewsModel.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		7F308BE32C0A81BC007BA2AA /* NewsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7F308BE42C0A81CE007BA2AA /* NewsAPI.swift */,
+			);
+			path = NewsAPI;
+			sourceTree = "<group>";
+		};
+		7F308BE62C0A81F8007BA2AA /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7F308BE72C0A8207007BA2AA /* NewsAPIK.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,11 +266,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F308BED2C0A827A007BA2AA /* DictionaryExtension.swift in Sources */,
 				7F308BC32C0A786F007BA2AA /* MainTabbarViewController.swift in Sources */,
+				7F308BE82C0A8207007BA2AA /* NewsAPIK.swift in Sources */,
 				7F308BE12C0A7F36007BA2AA /* NewsModel.swift in Sources */,
 				7F308BBF2C0A786F007BA2AA /* AppDelegate.swift in Sources */,
+				7F308BEB2C0A825C007BA2AA /* StringExtension.swift in Sources */,
 				7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */,
 				7F308BC12C0A786F007BA2AA /* SceneDelegate.swift in Sources */,
+				7F308BE52C0A81CE007BA2AA /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
