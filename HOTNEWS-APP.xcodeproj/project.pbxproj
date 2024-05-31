@@ -26,6 +26,7 @@
 		7F308BCC2C0A7871007BA2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F308BDD2C0A7CF6007BA2AA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7F308BE02C0A7F36007BA2AA /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		7F308BE22C0A7FF1007BA2AA /* APICONFIG.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APICONFIG.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		7F308BBD2C0A786F007BA2AA /* HOTNEWS-APP */ = {
 			isa = PBXGroup;
 			children = (
+				7F308BE22C0A7FF1007BA2AA /* APICONFIG.xcconfig */,
 				7F308BDB2C0A7ADC007BA2AA /* Core */,
 				7F308BDA2C0A7ABC007BA2AA /* Service */,
 				7F308BD82C0A7A4E007BA2AA /* Helpers */,

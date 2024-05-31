@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>APIKEY</key>
+    <string>$(API_KEY)</string>
+    <key>BASEURL</key>
+    <string>$(BASE_URL)</string>
+    <key>TOPHEADERS_EP</key>
+    <string>$(TOPHEADERS_EP)</string>
+    <key>EVERYTHING_EP</key>
+    <string>$(EVERYTHING_EP)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

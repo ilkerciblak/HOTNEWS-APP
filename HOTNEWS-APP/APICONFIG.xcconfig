@@ -1,0 +1,15 @@
+//
+//  Secret.xcconfig
+//  XabberSoft
+//
+//  Created by İlker Cıblak on 31.05.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = 18e529f7d9604f0686cd163f3d7b1b4c
+BASE_URL = newsapi.org/v2
+TOPHEADERS_EP = /top-headlines?
+EVERYTHING_EP = /everything?
+
