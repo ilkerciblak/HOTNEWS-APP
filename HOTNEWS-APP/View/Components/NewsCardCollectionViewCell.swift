@@ -62,7 +62,6 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
         self.sourceLabel.text = vm.sourceName
         self.url = vm.sourceUrl
         self.imgView.sd_setImage(with: URL(string: vm.imgUrl))
-        
     }
     
     

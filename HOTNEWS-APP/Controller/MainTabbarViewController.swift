@@ -7,12 +7,26 @@
 
 import UIKit
 
-class MainTabbarViewController: UIViewController {
+class MainTabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        setTabbarPreferences()
+        setViewControllers([homeVC], animated: true)
     }
+    
+    
+    private func setTabbarPreferences(){
+        tabBar.unselectedItemTintColor = .white
+        tabBar.tintColor = ColorK.flashWhite
+    }
+    
+    private let homeVC: UINavigationController = {
+        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "newspaper"), selectedImage: UIImage(systemName: "newspaper.fill"))
+        
+        return homeVC
+    }()
 
 
 }

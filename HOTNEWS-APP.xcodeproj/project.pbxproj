@@ -23,6 +23,7 @@
 		7F308BF42C0A8685007BA2AA /* NewsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BF32C0A8685007BA2AA /* NewsCardViewModel.swift */; };
 		7F308BF72C0A8946007BA2AA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7F308BF62C0A8946007BA2AA /* SDWebImage */; };
 		7F308BF92C0A8946007BA2AA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7F308BF82C0A8946007BA2AA /* SDWebImageMapKit */; };
+		7F308BFB2C0AF425007BA2AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BFA2C0AF425007BA2AA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		7F308BEF2C0A833D007BA2AA /* NewsCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F308BF12C0A84AD007BA2AA /* ColorK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorK.swift; sourceTree = "<group>"; };
 		7F308BF32C0A8685007BA2AA /* NewsCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardViewModel.swift; sourceTree = "<group>"; };
+		7F308BFA2C0AF425007BA2AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7F308BC22C0A786F007BA2AA /* MainTabbarViewController.swift */,
+				7F308BFA2C0AF425007BA2AA /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7F308BEB2C0A825C007BA2AA /* StringExtension.swift in Sources */,
 				7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */,
 				7F308BC12C0A786F007BA2AA /* SceneDelegate.swift in Sources */,
+				7F308BFB2C0AF425007BA2AA /* HomeViewController.swift in Sources */,
 				7F308BE52C0A81CE007BA2AA /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
