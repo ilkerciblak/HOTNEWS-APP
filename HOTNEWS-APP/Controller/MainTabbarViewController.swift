@@ -12,7 +12,7 @@ class MainTabbarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabbarPreferences()
-        setViewControllers([homeVC], animated: true)
+        setViewControllers([homeVC, settingsVC], animated: true)
     }
     
     
@@ -30,6 +30,12 @@ class MainTabbarViewController: UITabBarController {
         return homeVC
     }()
 
+    private let settingsVC: UINavigationController = {
+        let vc = UINavigationController(rootViewController: SettingsViewController())
+        vc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear.circle.fill"))
+        
+        return vc
+    }()
 
 }
 
