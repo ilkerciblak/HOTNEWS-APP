@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1F897F2C0B3913009128DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F897E2C0B3913009128DB /* HomeViewModel.swift */; };
 		7F308BBF2C0A786F007BA2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BBE2C0A786F007BA2AA /* AppDelegate.swift */; };
 		7F308BC12C0A786F007BA2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BC02C0A786F007BA2AA /* SceneDelegate.swift */; };
 		7F308BC32C0A786F007BA2AA /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F308BC22C0A786F007BA2AA /* MainTabbarViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F1F897E2C0B3913009128DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7F308BBB2C0A786F007BA2AA /* HOTNEWS-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOTNEWS-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F308BBE2C0A786F007BA2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F308BC02C0A786F007BA2AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				7F308BF32C0A8685007BA2AA /* NewsCardViewModel.swift */,
+				7F1F897E2C0B3913009128DB /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				7F308BE12C0A7F36007BA2AA /* NewsModel.swift in Sources */,
 				7F308BBF2C0A786F007BA2AA /* AppDelegate.swift in Sources */,
 				7F308BEB2C0A825C007BA2AA /* StringExtension.swift in Sources */,
+				7F1F897F2C0B3913009128DB /* HomeViewModel.swift in Sources */,
 				7F308BDE2C0A7CF6007BA2AA /* NetworkService.swift in Sources */,
 				7F308BC12C0A786F007BA2AA /* SceneDelegate.swift in Sources */,
 				7F308BFB2C0AF425007BA2AA /* HomeViewController.swift in Sources */,

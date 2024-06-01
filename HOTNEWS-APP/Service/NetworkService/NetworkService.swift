@@ -21,12 +21,13 @@ class NetworkService{
         
         var urlRequest =  URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = header
-        
+        print(url)
         let task = URLSession.shared.dataTask(with: urlRequest){
             (data, response, error) in
             
             guard error == nil else {
                 completionHandler(.failure(error!))
+                print("Networks Service Layer error: \(error!)")
                 return
             }
             

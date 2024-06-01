@@ -18,7 +18,9 @@ class MainTabbarViewController: UITabBarController {
     
     private func setTabbarPreferences(){
         tabBar.unselectedItemTintColor = .white
+        tabBar.backgroundColor = ColorK.balticBlack
         tabBar.tintColor = ColorK.flashWhite
+        tabBar.isTranslucent = false
     }
     
     private let homeVC: UINavigationController = {

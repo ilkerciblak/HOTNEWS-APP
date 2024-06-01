@@ -33,8 +33,6 @@ struct NewsCardViewModel{
         return NewsCardViewModel(title: article.title, url2Image: article.urlToImage, source: article.source.name, url: article.url)
     }
     
-    
-    
-    
+        
     
 }

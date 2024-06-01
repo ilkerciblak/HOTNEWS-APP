@@ -20,7 +20,8 @@ class NewsAPI{
     }
     
     public func getTopHeaders(parameters: Dictionary<String, String>? = nil, completionHandler: @escaping (Result<NewsResponse, Error>) -> Void){
-        let endPoint = NewsApiK.baseUrl.configureUrlString(endPoint: NewsApiK.topHeadersEndPoint,parameters: parameters)
+        let endPoint = NewsApiK.baseUrl.configureUrlString(endPoint: NewsApiK.topHeadersEndPoint,parameters: ["country": "us"])
+        
         getData(with: endPoint, completionHandler: completionHandler)
     }
     
