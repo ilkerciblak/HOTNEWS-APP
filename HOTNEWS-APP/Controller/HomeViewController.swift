@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    private var collection = [Article]()
+    private var collection = HomeViewModel.shared.collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +28,21 @@ class HomeViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NewsAPI.shared.getTopHeaders{
-            results in
-            
-            switch results {
-            case .success(let success):
-                DispatchQueue.main.async{
-                    self.collection = success.articles!
-                    
-                    self.newsCardCollection.reloadData()
+        if self.collection.isEmpty{
+            HomeViewModel.shared.getTopHeaders{
+                results in
+                
+                switch results {
+                case .success(let success):
+                    DispatchQueue.main.async{
+                        self.collection = success
+                        self.newsCardCollection.reloadData()
+                    }
+                case .failure(let failure):
+                    print("HomeViewController with :\(failure)")
                 }
-            case .failure(let failure):
-                print("failure")
-                print(failure)
             }
         }
-        
     }
     
     private let filterBtnCollection : UICollectionView =  {
@@ -83,7 +82,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.newsCardCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCardCollectionViewCell.identifier, for: indexPath) as! NewsCardCollectionViewCell
             
-            cell.configure(vm: NewsCardViewModel.fromArticle(self.collection[indexPath.row]))
+            cell.configure(vm: self.collection[indexPath.row])
             
             return cell
         }else{
