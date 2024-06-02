@@ -14,7 +14,6 @@ class HomeViewModel{
     public var collection : [NewsCardViewModel] = [NewsCardViewModel]()
     
     public func getTopHeaders(completionHandler: @escaping (Result<[NewsCardViewModel],Error>) -> Void){
-        print("getTopHeaders called")
         NewsAPI.shared.getTopHeaders{
             [weak self] (results) in
             

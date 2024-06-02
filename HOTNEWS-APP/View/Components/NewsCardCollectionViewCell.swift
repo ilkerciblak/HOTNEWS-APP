@@ -52,12 +52,12 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
             titleLabel.topAnchor.constraint(equalTo: textContainer.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: textContainer.leadingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: textContainer.trailingAnchor, constant: -3),
-            titleLabel.bottomAnchor.constraint(equalTo: textContainer.bottomAnchor, constant: -20),
+            
             
             // sourceName constraints
             sourceLabel.leadingAnchor.constraint(equalTo: textContainer.leadingAnchor, constant: 5),
             sourceLabel.trailingAnchor.constraint(equalTo: textContainer.trailingAnchor, constant: -5),
-            sourceLabel.bottomAnchor.constraint(equalTo: textContainer.bottomAnchor, constant: -3),
+            sourceLabel.bottomAnchor.constraint(equalTo: textContainer.bottomAnchor, constant: -10),
             
             
         ])
@@ -83,9 +83,11 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
     private let titleLabel : UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = ColorK.flashWhite
+        titleLabel.font = FontK.BebasNeue.bebas22px
         titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.numberOfLines = .zero
+        titleLabel.numberOfLines = 4
+        
         
         return titleLabel
     }()
@@ -93,6 +95,7 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
     private let sourceLabel : UILabel = {
         let sourceLabel = UILabel()
         sourceLabel.textColor = ColorK.flashWhite
+        sourceLabel.font = FontK.BebasNeue.bebas12px
         sourceLabel.numberOfLines = 1
         return sourceLabel
     }()

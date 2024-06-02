@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    private var collection = HomeViewModel.shared.collection
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,14 @@ class HomeViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.collection.isEmpty{
+        if HomeViewModel.shared.collection.isEmpty{
             HomeViewModel.shared.getTopHeaders{
                 results in
                 
                 switch results {
-                case .success(let success):
+                case .success(_):
                     DispatchQueue.main.async{
-                        self.collection = success
+                        
                         self.newsCardCollection.reloadData()
                     }
                 case .failure(let failure):
@@ -59,11 +59,12 @@ class HomeViewController: UIViewController{
     private let newsCardCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 20
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = ColorK.steelBlack
         collectionView.register(NewsCardCollectionViewCell.self, forCellWithReuseIdentifier: NewsCardCollectionViewCell.identifier)
+        
         return collectionView
     }()
     
@@ -75,14 +76,14 @@ class HomeViewController: UIViewController{
 //MARK: CollectionViewDelegation
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.collection.count
+        return HomeViewModel.shared.collection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.newsCardCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCardCollectionViewCell.identifier, for: indexPath) as! NewsCardCollectionViewCell
             
-            cell.configure(vm: self.collection[indexPath.row])
+            cell.configure(vm: HomeViewModel.shared.collection[indexPath.row])
             
             return cell
         }else{

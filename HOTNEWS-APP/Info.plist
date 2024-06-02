@@ -10,6 +10,10 @@
 	<string>$(EVERYTHING_EP)</string>
 	<key>TOPHEADERS_EP</key>
 	<string>$(TOPHEADERS_EP)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue-Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
