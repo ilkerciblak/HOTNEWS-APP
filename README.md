@@ -12,5 +12,5 @@ Main scope of the application is to gather top read headlines from all around th
 ## Packages and APIs
 * [NEWS API](https://newsapi.org) - is a simple HTTP REST API for searching and retrieving live articles from all over the web.
 * [SDWEBIMAGE](https://github.com/SDWebImage/SDWebImage) - Asynchronous image downloader package with cache support for swift projects
-
+* [Font: Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) - Preferred font for top rated news (home page) hero cards
 
