@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, Navigatable{
     
     
     
@@ -82,7 +82,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.newsCardCollection{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCardCollectionViewCell.identifier, for: indexPath) as! NewsCardCollectionViewCell
-            
+            cell.delegate = self
             cell.configure(vm: HomeViewModel.shared.collection[indexPath.row])
             
             return cell

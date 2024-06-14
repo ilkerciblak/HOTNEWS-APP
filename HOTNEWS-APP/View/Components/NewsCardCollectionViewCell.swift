@@ -13,14 +13,22 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
     static let identifier = "NewsCardCollectionViewCell"
     private var url : String? = ""
     
+    var delegate: Navigatable? = nil
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapOn))
+        contentView.isUserInteractionEnabled = true
+        contentView.addGestureRecognizer(gesture)
         contentView.addSubview(imgView)
         contentView.addSubview(textContainer)
         textContainer.addSubview(titleLabel)
         textContainer.addSubview(sourceLabel)
         applyConstraints()
+        
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -99,6 +107,12 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
         sourceLabel.numberOfLines = 1
         return sourceLabel
     }()
+    
+    @objc private func didTapOn(){
+        let vc = HeaderDetailView()
+        print("asdasd")
+        delegate?.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     public func configure(vm: NewsCardViewModel){

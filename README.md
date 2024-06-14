@@ -14,3 +14,12 @@ Main scope of the application is to gather top read headlines from all around th
 * [SDWEBIMAGE](https://github.com/SDWebImage/SDWebImage) - Asynchronous image downloader package with cache support for swift projects
 * [Font: Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) - Preferred font for top rated news (home page) hero cards
 
+
+## Future Works
+[ ] Improve Generic Network Manager Class with Http method enumerations and exception handlings
+
+[ ] Generate Exception Handling 
+
+[ ] Create `Header Detail` Screen
+
+[ ] Secure Api-Keys and other secrets
