@@ -18,7 +18,7 @@ class HomeViewModel{
     public func getTopHeaders(completionHandler: @escaping (Result<[NewsCardViewModel],Error>) -> Void){
         NewsAPI.shared.getTopHeaders{
             [weak self] (results) in
-            
+            print("SORGU")
             switch results {
             case .success(let success):
                 self?.collection = success.articles!.map{

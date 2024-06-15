@@ -110,7 +110,8 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
     
     @objc private func didTapOn(){
         let vc = HeaderDetailView()
-        print("asdasd")
+        vc.newsDetailVM = HeaderDetailViewModel.fromArticle(HomeViewModel.shared.rawCollection.randomElement() ?? HomeViewModel.shared.rawCollection[0])
+        
         delegate?.navigationController?.pushViewController(vc, animated: true)
     }
     
