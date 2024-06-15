@@ -26,9 +26,7 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
         textContainer.addSubview(titleLabel)
         textContainer.addSubview(sourceLabel)
         applyConstraints()
-        
-        
-        
+
     }
     
     required init?(coder: NSCoder) {
@@ -109,8 +107,9 @@ class NewsCardCollectionViewCell: UICollectionViewCell {
     }()
     
     @objc private func didTapOn(){
+        let article = HomeViewModel.shared.rawCollection.findIndex(title: titleLabel.text!)
         let vc = HeaderDetailView()
-        vc.newsDetailVM = HeaderDetailViewModel.fromArticle(HomeViewModel.shared.rawCollection.randomElement() ?? HomeViewModel.shared.rawCollection[0])
+        vc.newsDetailVM = HeaderDetailViewModel.fromArticle(article!)
         
         delegate?.navigationController?.pushViewController(vc, animated: true)
     }
