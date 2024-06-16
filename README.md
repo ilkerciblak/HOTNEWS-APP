@@ -16,10 +16,12 @@ Main scope of the application is to gather top read headlines from all around th
 
 
 ## Future Works
-[ ] Improve Generic Network Manager Class with Http method enumerations and exception handlings
+[ ] Improve Generic Network Manager, following Dependency Inversion princible
 
 [ ] Generate Exception Handling 
 
-[ ] Create `Header Detail` Screen
+[x] Create `Header Detail` Screen
+
+[x] Create WebView Service
 
 [ ] Secure Api-Keys and other secrets
