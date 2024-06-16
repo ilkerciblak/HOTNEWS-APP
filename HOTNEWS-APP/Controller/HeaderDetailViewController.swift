@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class HeaderDetailView: UIViewController{
+class HeaderDetailView: UIViewController, WebViewable{
     
     public var newsDetailVM : HeaderDetailViewModel? = nil
     
@@ -24,6 +24,10 @@ class HeaderDetailView: UIViewController{
         contentBox.addSubview(sourceLabel)
         applyContraints()
         
+        openSourceBtn.addTarget(self, action: #selector(didTapOn), for: .touchUpInside)
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOn))
+//        openSourceBtn.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,8 +82,6 @@ class HeaderDetailView: UIViewController{
             // Source Label
             sourceLabel.topAnchor.constraint(equalTo: authorLabel.topAnchor),
             sourceLabel.leadingAnchor.constraint(equalTo: authorLabel.trailingAnchor, constant: 10),
-            
-
             ])
     }
     
@@ -143,6 +145,11 @@ class HeaderDetailView: UIViewController{
         
         return btn
     }()
+    
+    
+    @objc func didTapOn(){
+        self.pushWebView(url: self.newsDetailVM?.redirectUrl ?? "")
+    }
     
     private func configure()-> Void{
         self.imgView.sd_setImage(with: URL(string: self.newsDetailVM?.imgUrl ?? ""))
