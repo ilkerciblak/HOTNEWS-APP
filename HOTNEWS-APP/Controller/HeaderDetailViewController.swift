@@ -22,6 +22,7 @@ class HeaderDetailView: UIViewController, WebViewable {
         contentBox.addSubview(descriptionLabel)
         contentBox.addSubview(authorLabel)
         contentBox.addSubview(sourceLabel)
+        self.navigationController?.navigationBar.tintColor = .white
         applyContraints()
         
         openSourceBtn.addTarget(self, action: #selector(didTapOn), for: .touchUpInside)
