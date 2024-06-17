@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, Navigatable{
+class HomeViewController: UIViewController, Navigatable, Filterable{
     
     
     
@@ -17,13 +17,14 @@ class HomeViewController: UIViewController, Navigatable{
         view.addSubview(newsCardCollection)
         self.newsCardCollection.delegate = self
         self.newsCardCollection.dataSource = self
-
-        
+        self.filterBtnCollection.delegate = self
+        self.filterBtnCollection.dataSource = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        newsCardCollection.frame = view.frame
+        filterBtnCollection.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.2)
+        newsCardCollection.frame = CGRect(x: 0, y: filterBtnCollection.frame.maxY, width: view.frame.width, height: view.frame.height * 0.8)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +32,9 @@ class HomeViewController: UIViewController, Navigatable{
         if HomeViewModel.shared.collection.isEmpty{
             HomeViewModel.shared.getTopHeaders{
                 results in
-                
                 switch results {
                 case .success(_):
                     DispatchQueue.main.async{
-                        
                         self.newsCardCollection.reloadData()
                     }
                 case .failure(let failure):
@@ -49,8 +48,9 @@ class HomeViewController: UIViewController, Navigatable{
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
+        layout.minimumLineSpacing = 30
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CategoryFilterBtnView.self, forCellWithReuseIdentifier: CategoryFilterBtnView.identifier)
         collectionView.backgroundColor = ColorK.steelBlack
         return collectionView
             
@@ -76,7 +76,13 @@ class HomeViewController: UIViewController, Navigatable{
 //MARK: CollectionViewDelegation
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeViewModel.shared.collection.count
+        if collectionView == self.newsCardCollection {
+            return HomeViewModel.shared.collection.count
+        }else if collectionView == self.filterBtnCollection {
+            return NewsApiK.categories.count
+        }else {
+            return 3
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,15 +94,28 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }else{
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryFilterBtnView.identifier, for: indexPath) as! CategoryFilterBtnView
+            cell.configure(category: NewsApiK.categories[indexPath.row])
+            cell.delegate = self
+            
             return cell
         }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width/2 - 15, height: view.frame.height/3)
+        if collectionView == self.newsCardCollection{
+            return CGSize(width: view.frame.width/2 - 15, height: view.frame.height/3)
+        }else {
+            return CGSize(width: 150, height: 50)
+        }
+            
+        
     }
     
-    
+    func reloadTableData(){
+        DispatchQueue.main.async{
+            self.newsCardCollection.reloadData()
+        }
+    }
 }

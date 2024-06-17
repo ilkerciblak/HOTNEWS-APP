@@ -12,10 +12,9 @@ import UIKit
 class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate{
     public var url : URL? = nil
     private var webView: WKWebView = {
-        
-        
         let view = WKWebView()
         view.allowsBackForwardNavigationGestures = true
+        
         
         return view
     }()
@@ -43,9 +42,4 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate{
         let request = URLRequest(url: self.url!)
         webView.load(request)
     }
-    
-    
-    
-    
-    
 }

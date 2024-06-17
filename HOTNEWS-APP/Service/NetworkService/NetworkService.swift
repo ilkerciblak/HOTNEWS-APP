@@ -7,44 +7,52 @@
 
 import Foundation
 
-class NetworkService{
+class NetworkService: Networkable{
     
     static let shared = NetworkService()
     
-    func fetchData<T: Decodable>(with url: String, header: Dictionary<String, String>? = nil, completionHandler: @escaping (Result<T, Error>) -> Void){
-        
+    
+    func getRequest<T: Decodable>(with url: String, header: Dictionary<String, String>? = nil, completionHandler: @escaping (Result<T, Error>) -> Void){
         guard let url = URL(string: url) else {
-            print("Url pattern is wrong with:\(url)")
-            
+            completionHandler(.failure(NetworkError.invalidUrl))
             return
         }
         
-        var urlRequest =  URLRequest(url: url)
+        var urlRequest = URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = header
+        urlRequest.httpMethod = HttpMethod.get.rawValue
         
         let task = URLSession.shared.dataTask(with: urlRequest){
-            (data, response, error) in
+            (rawData, response, error) in
             
             guard error == nil else {
-                completionHandler(.failure(error!))
-                print("Networks Service Layer error: \(error!)")
+                completionHandler(.failure(NetworkError.unknown))
                 return
             }
             
-            if let safeData = data {
-                do{
-                    let decoded = try JSONDecoder().decode(T.self, from: safeData)
-                    
-                    completionHandler(.success(decoded))
-                }catch let decodingError{
-                    print("Decoding Error @fetchData with:\(decodingError)")
-                    completionHandler(.failure(decodingError))
-                }
+            guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
+                completionHandler(.failure(NetworkError.badResponseCode))
+                return
             }
+            
+            guard let safeData = rawData else {
+                completionHandler(.failure(NetworkError.unknown))
+                return
+            }
+            
+            guard let decodedData = try? JSONDecoder().decode(T.self, from: safeData) else {
+                completionHandler(.failure(NetworkError.decodeError))
+                return
+            }
+            
+            completionHandler(.success(decodedData))
+            
         }
         
         task.resume()
-        
     }
+    
+    
+    
+    
 }
-

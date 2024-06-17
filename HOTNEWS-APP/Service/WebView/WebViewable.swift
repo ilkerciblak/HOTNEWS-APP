@@ -15,9 +15,8 @@ protocol WebViewable where Self: UIViewController{
 
 extension WebViewable{
     func pushWebView(url:String){
-        print("Extension")
+        
         guard let url = URL(string: url) else{
-            print("Error")
             return
         }
         let vc = WebViewController()

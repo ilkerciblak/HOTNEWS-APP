@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class HeaderDetailView: UIViewController, WebViewable{
+class HeaderDetailView: UIViewController, WebViewable {
     
     public var newsDetailVM : HeaderDetailViewModel? = nil
     
