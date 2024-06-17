@@ -16,12 +16,12 @@ Main scope of the application is to gather top read headlines from all around th
 
 
 ## Future Works
-[ ] Improve Generic Network Manager, following Dependency Inversion princible
-
-[ ] Generate Exception Handling 
+[X] Improve Generic Network Manager, following Dependency Inversion princible
 
 [x] Create `Header Detail` Screen
 
 [x] Create WebView Service
+
+[ ] Generate Exception Handling 
 
 [ ] Secure Api-Keys and other secrets
