@@ -3,6 +3,10 @@
 
 Hot News App, is a mobile application developed with ``Swift Language`` using programmatical layout approach. Main purpose of the development process is educational, thus all critisms will be greeted with joy. Please contact with [creator](mailto:dev.ilkerciblak@gmail.com), or open an issue to contribute.
 
+<p align="center">
+<img src="HOTNEWS-APP/Resource/screenshots/screenshot1.png" width="600" height="400" border="3"/>
+</p>
+
 > [!Note]
 > Project is WIP 🚧
 
